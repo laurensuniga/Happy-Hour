@@ -1,0 +1,86 @@
+:root {
+    --header-text: 'Unica one', cursive;
+    --secondary-text: 'IBM Plex Sans', sans-serif;
+}
+
+* {
+box-sizing: border-box;
+margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(grey, white);
+}
+
+main {
+    flex-grow: 1;
+    flex-direction: column ;
+    margin: 70px 0 0 20px;
+}
+
+.card1 {
+    height: 200px;
+    width: 200px;
+    border: 2.5px solid black;
+}
+
+img {
+    height: 200px;
+    width: 200px;
+}
+
+.card2 {
+    height: 200px;
+    width: 200px;
+    border: 2.5px solid black;
+}
+
+.card3 {
+    height: 200px;
+    width: 200px;
+    border: 2.5px solid black;
+}
+
+#cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+h2 {
+    font-family: var(--secondary-text);
+    margin-bottom: 20px;
+    color: black;
+    font-size: 20px;
+}
+
+h3 {
+    margin-top: 55px;
+    font-family: var(--secondary-text);
+    color: black;
+    font-size: 20px;
+}
+
+header, footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65px;
+    width: 100%;
+}
+
+header {
+    justify-content: center;
+    font-family: var(--header-text);
+    font-size: 25px;
+    color: #00CED1;
+}
+
+footer {
+    justify-content: center;
+}
+
+
