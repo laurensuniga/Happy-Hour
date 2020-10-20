@@ -1,8 +1,8 @@
 
 // Constants
-const { openDrinkAPIKey } = CONFIG;
-const API_KEY = openDrinkAPIKey;
-const BASE_URL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita';
+// const { openDrinkAPIKey } = CONFIG;
+const API_KEY = '1';
+const BASE_URL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=sazerac';
 
 let drinkData, userInput;
 
@@ -13,6 +13,7 @@ let drinkData, userInput;
 
 const $cocktail = $('#Cocktail');
 const $ingredients = $('#Ingredients');
+const $glass = $('#Glass');
 const $instructions = $('#Instructions');
 const $form = $('form');
 const $input = $('input[type="text"]');
@@ -35,7 +36,7 @@ function handleDrinkData(event) {
     if(!userInput) return;
 }
 $.ajax(
-    {url: 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita'
+    {url: 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=sazerac'
 }).then(
     function (data) {
         console.log(data);
@@ -60,6 +61,7 @@ function handleClick() {
 function render() {
     $cocktail.text('Cocktail:  ' + drinkData[0].strDrink);
     $ingredients.text(`Ingredients: ${drinkData[0].strMeasure1} ${drinkData[0].strIngredient1}, ${drinkData[0].strMeasure2} ${drinkData[0].strIngredient2}, ${drinkData[0].strMeasure3} ${drinkData[0].strIngredient3}, ${drinkData[0].strIngredient4}`);
+    $glass.text('Glass:  ' + drinkData[0].strGlass);
     $instructions.text('How to make: ' + drinkData[0].strInstructions);
 }
 
