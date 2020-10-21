@@ -2,7 +2,7 @@
 // Constants
 // const { openDrinkAPIKey } = CONFIG;
 const API_KEY = '1';
-const BASE_URL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=sazerac';
+const BASE_URL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
 
 let drinkData, userInput;
 
@@ -17,45 +17,36 @@ const $glass = $('#Glass');
 const $instructions = $('#Instructions');
 const $form = $('form');
 const $input = $('input[type="text"]');
+const $card1 = $('#card1');
+const $card2 = $('#card2');
+const $card3 = $('#card3');
 
 
 
 // Event Listeners
-$form.on('click', 'article', handleClick);
+$form.on('submit', handleSubmit);
 
 
 
 // Functions
 
-
-function handleDrinkData(event) {
+function handleSubmit(event) {
     event.preventDefault();
-
-    userInput = $input.val();
-
-    if(!userInput) return;
+    let userInput = $input.val();
+    // if(!userInput) return;
+    $.ajax(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${userInput}`)
+    .then(
+        function (data) {
+            console.log(data);
+    
+            drinkData = data.drinks;
+            render();
+        }, 
+        function (error) {
+            console.log('Error', error);
+        }
+    );
 }
-$.ajax(
-    {url: 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=sazerac'
-}).then(
-    function (data) {
-        console.log(data);
-
-        drinkData = data.drinks;
-        render();
-    }, 
-    function (error) {
-        console.log('Error', error);
-    }
-);
-
-
-function handleClick() {
-    const url = this.dataset.url;
-    getData(url);
-}
-
-
 
 
 function render() {
