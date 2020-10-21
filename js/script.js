@@ -100,15 +100,24 @@ function getNegroni(event) {
 
 function render() {
     $cocktail.text('Cocktail:  ' + drinkData[0].strDrink);
-    $ingredients.text(`Ingredients: ${drinkData[0].strMeasure1 != null? drinkData[0].strMeasure1 : ''} ${drinkData[0].strIngredient1} ${drinkData[0].strMeasure2} ${drinkData[0].strIngredient2} ${drinkData[0].strMeasure3} ${drinkData[0].strIngredient3} ${drinkData[0].strIngredient4} ${drinkData[0].strIngredient5} ${drinkData[0].strIngredient6 != null? drinkData[0].strMeasure1 : ''} ${drinkData[0].strIngredient7 != null? drinkData[0].strMeasure1 : ''}`);
+
+    $ingredients.text(`Ingredients: ${drinkData[0].strMeasure1 != null? drinkData[0].strMeasure1 : ''} 
+    ${drinkData[0].strIngredient1 != null? drinkData[0].strIngredient1 : ''} 
+    ${drinkData[0].strMeasure2 != null? drinkData[0].strMeasure2 : ''} 
+    ${drinkData[0].strIngredient2 != null? drinkData[0].strIngredient2 : ''} 
+    ${drinkData[0].strMeasure3 != null? drinkData[0].strMeasure3 : ''} 
+    ${drinkData[0].strIngredient3 != null? drinkData[0].strIngredient3 : ''} 
+    ${drinkData[0].strMeasure4 != null? drinkData[0].strMeasure4 : ''} 
+    ${drinkData[0].strIngredient4 != null? drinkData[0].strIngredient4 : ''} 
+    ${drinkData[0].strMeasure5 != null? drinkData[0].strMeasure5 : ''} 
+    ${drinkData[0].strIngredient5 != null? drinkData[0].strIngredient5 : ''} 
+    ${drinkData[0].strMeasure6 != null? drinkData[0].strMeasure6 : ''} 
+    ${drinkData[0].strIngredient6 != null? drinkData[0].strIngredient6 : ''} 
+    ${drinkData[0].strMeasure7 != null? drinkData[0].strMeasure7 : ''} 
+    ${drinkData[0].strIngredient7 != null? drinkData[0].strIngredient7 : ''}`);
+    
     $glass.text('Glass:  ' + drinkData[0].strGlass);
     $instructions.text('How to make: ' + drinkData[0].strInstructions);
-
-    for(i=0; i < drinkData.length; i++) {
-        if(drinkdata[0].strIngredient$(i) != "null");
-    }
-
-    $modal.modal();
 }
 
 
