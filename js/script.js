@@ -100,7 +100,7 @@ function getNegroni(event) {
 
 function render() {
     $cocktail.text('Cocktail:  ' + drinkData[0].strDrink);
-    $ingredients.text(`Ingredients: ${drinkData[0].strMeasure1 != null? drinkData[0].strMeasure1 : ''} ${drinkData[0].strIngredient1}, ${drinkData[0].strMeasure2} ${drinkData[0].strIngredient2}, ${drinkData[0].strMeasure3} ${drinkData[0].strIngredient3}, ${drinkData[0].strIngredient4}, ${drinkData[0].strIngredient5}, ${drinkData[0].strIngredient6}, ${drinkData[0].strIngredient7 = null? drinkData[0].strMeasure1 : ''}`);
+    $ingredients.text(`Ingredients: ${drinkData[0].strMeasure1 != null? drinkData[0].strMeasure1 : ''} ${drinkData[0].strIngredient1} ${drinkData[0].strMeasure2} ${drinkData[0].strIngredient2} ${drinkData[0].strMeasure3} ${drinkData[0].strIngredient3} ${drinkData[0].strIngredient4} ${drinkData[0].strIngredient5} ${drinkData[0].strIngredient6 != null? drinkData[0].strMeasure1 : ''} ${drinkData[0].strIngredient7 != null? drinkData[0].strMeasure1 : ''}`);
     $glass.text('Glass:  ' + drinkData[0].strGlass);
     $instructions.text('How to make: ' + drinkData[0].strInstructions);
 
