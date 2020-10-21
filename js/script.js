@@ -25,7 +25,7 @@ const $card3 = $('#card3');
 
 // Event Listeners
 $form.on('submit', handleSubmit);
-
+$card1.on('click', getSazerac);
 
 
 // Functions
@@ -35,6 +35,21 @@ function handleSubmit(event) {
     let userInput = $input.val();
     // if(!userInput) return;
     $.ajax(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${userInput}`)
+    .then(
+        function (data) {
+            console.log(data);
+    
+            drinkData = data.drinks;
+            render();
+        }, 
+        function (error) {
+            console.log('Error', error);
+        }
+    );
+}
+
+function getSazerac(event) {
+    $.ajax('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=sazerac')
     .then(
         function (data) {
             console.log(data);
