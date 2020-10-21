@@ -9,8 +9,8 @@ HTML
 CSS
 JavaScript
 
+# Getting Started
+https://laurensuniga.github.io/Happy-Hour/
+
 # Api's Used
 https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita
-
-# Get Started
-https://laurensuniga.github.io/Happy-Hour/
