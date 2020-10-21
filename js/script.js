@@ -20,12 +20,16 @@ const $input = $('input[type="text"]');
 const $card1 = $('#card1');
 const $card2 = $('#card2');
 const $card3 = $('#card3');
+const $modal = $('#modal');
+
 
 
 
 // Event Listeners
 $form.on('submit', handleSubmit);
 $card1.on('click', getSazerac);
+$card2.on('click', getMojito);
+$card3.on('click', getNegroni);
 
 
 // Functions
@@ -63,12 +67,48 @@ function getSazerac(event) {
     );
 }
 
+function getMojito(event) {
+    $.ajax('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=mojito')
+    .then(
+        function (data) {
+            console.log(data);
+    
+            drinkData = data.drinks;
+            render();
+        }, 
+        function (error) {
+            console.log('Error', error);
+        }
+    );
+}
+
+function getNegroni(event) {
+    $.ajax('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=negroni')
+    .then(
+        function (data) {
+            console.log(data);
+    
+            drinkData = data.drinks;
+            render();
+        }, 
+        function (error) {
+            console.log('Error', error);
+        }
+    );
+}
+
 
 function render() {
     $cocktail.text('Cocktail:  ' + drinkData[0].strDrink);
-    $ingredients.text(`Ingredients: ${drinkData[0].strMeasure1} ${drinkData[0].strIngredient1}, ${drinkData[0].strMeasure2} ${drinkData[0].strIngredient2}, ${drinkData[0].strMeasure3} ${drinkData[0].strIngredient3}, ${drinkData[0].strIngredient4}`);
+    $ingredients.text(`Ingredients: ${drinkData[0].strMeasure1 != null? drinkData[0].strMeasure1 : ''} ${drinkData[0].strIngredient1}, ${drinkData[0].strMeasure2} ${drinkData[0].strIngredient2}, ${drinkData[0].strMeasure3} ${drinkData[0].strIngredient3}, ${drinkData[0].strIngredient4}, ${drinkData[0].strIngredient5}, ${drinkData[0].strIngredient6}, ${drinkData[0].strIngredient7 = null? drinkData[0].strMeasure1 : ''}`);
     $glass.text('Glass:  ' + drinkData[0].strGlass);
     $instructions.text('How to make: ' + drinkData[0].strInstructions);
+
+    for(i=0; i < drinkData.length; i++) {
+        if(drinkdata[0].strIngredient$(i) != "null");
+    }
+
+    $modal.modal();
 }
 
 

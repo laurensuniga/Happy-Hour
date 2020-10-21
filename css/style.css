@@ -21,27 +21,9 @@ main {
     margin: 70px 0 0 20px;
 }
 
-.card1 {
-    height: 206px;
-    width: 206px;
-    border: 3px solid black;
-}
-
 img {
     height: 200px;
     width: 200px;
-}
-
-.card2 {
-    height: 206px;
-    width: 206px;
-    border: 3px solid black;
-}
-
-.card3 {
-    height: 206px;
-    width: 206px;
-    border: 3px solid black;
 }
 
 #cards {
@@ -50,10 +32,23 @@ img {
     justify-content: space-around;
 }
 
-#drink {
+.drink {
     display: flex;
     justify-content: space-around;
+    height: 206px;
+    width: 206px;
+    border: 3px solid black;
+    cursor: pointer;
 }
+
+.name {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-family: var(--secondary-text);
+    margin-top: 50px;
+}
+
 
 h2 {
     font-family: var(--secondary-text);
@@ -89,4 +84,7 @@ footer {
     justify-content: center;
 }
 
-
+#modal {
+    line-height: 30px;
+    font-size: 20px;
+}
