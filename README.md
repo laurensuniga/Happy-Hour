@@ -8,6 +8,7 @@ This website will allow users to search any popular cocktail by name and get the
 HTML
 CSS
 JavaScript
+JQuery
 
 # Getting Started
 https://laurensuniga.github.io/Happy-Hour/
